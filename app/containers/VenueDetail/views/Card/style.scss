@@ -1,0 +1,57 @@
+@import '../../../../assets/styles/variables.scss';
+
+.photo-card-wrapper {
+  width: 50%;
+  padding: 0 10px;
+  margin-top: 20px;
+}
+
+.photo-card {
+  position: relative;
+  overflow: hidden;
+
+  img {
+    max-width: 100%;
+  }
+
+  .photo-card-detail {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background-color: rgba(18, 25, 95, 0.5);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: opacity .2s ease-in-out;
+    opacity: 0;
+
+    img {
+      width: 65px;
+      clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+      transition: opacity .2s ease-in-out;
+      opacity: 0;
+    }
+
+    h4 {
+      margin: 24px 0 0;
+      font-size: 14px;
+      color: #ffffff;
+      transition: opacity .2s ease-in-out;
+      opacity: 0;
+    }
+  }
+
+  &:hover {
+    .photo-card-detail {
+      opacity: 1;
+
+      h4,
+      img {
+        opacity: 1;
+      }
+    }
+  }
+}

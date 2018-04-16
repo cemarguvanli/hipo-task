@@ -1,0 +1,21 @@
+@import '../../../../assets/styles/variables.scss';
+
+.recent-search-list {
+  ul {
+    li {
+      padding: 16px;
+      border-bottom: solid 1px #e4e4e4;
+      &:last-of-type {
+        border: 0;
+      }
+      a {
+        font-size: 14px;
+        color: #9b9b9b;
+        overflow: hidden;
+        white-space: pre-line;
+        text-overflow: ellipsis;
+        display: block;
+      }
+    }
+  }
+}

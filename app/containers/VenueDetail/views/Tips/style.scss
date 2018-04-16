@@ -1,0 +1,43 @@
+@import '../../../../assets/styles/variables.scss';
+
+.venue-detail-page {
+  .sidebar.tips {
+    box-shadow: 0 0 34px 0 rgba(115, 95, 255, 0.32);
+    .link {
+      margin: 40px 0;
+    }
+    ul {
+      li {
+        display: flex;
+        align-items: flex-start;
+        padding: 16px;
+        border-bottom: solid 1px #e4e4e4;
+
+        img {
+          width: 65px;
+          clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+        }
+
+        .tip-detail {
+          padding-left: 16px;
+          text-align: left;
+
+          span {
+            font-size: 14px;
+            font-weight: 500;
+            color: #9b9b9b;
+            margin: 15px 0;
+            display: block;
+          }
+
+          p {
+            margin: 0;
+            font-size: 14px;
+            color: #9b9b9b;
+            font-family: $font-regular;
+          }
+        }
+      }
+    }
+  }
+}

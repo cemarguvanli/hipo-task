@@ -1,0 +1,43 @@
+@import '../../assets/styles/variables.scss';
+
+.button-wrapper {
+  text-align: center;
+
+  button {
+    height: 45px;
+    border: 0;
+    border-radius: 4px;
+    box-shadow: 0 12px 21px 0 rgba(0, 0, 0, 0.24);
+    padding: 4px 16px;
+    transition: all .2s ease-in;
+
+    &:active,
+    &:focus {
+      outline: none;
+    }
+
+    &:hover {
+      opacity: .9;
+    }
+  }
+}
+
+.button-wrapper.danger {
+  button {
+    color: #fff;
+    background-color: #ff5f5f;
+  }
+}
+
+.button-wrapper.link {
+  button {
+    color: #776cee;
+    background-color: transparent;
+    height: auto;
+    padding: 0;
+    text-decoration: underline;
+    box-shadow: none;
+    font-size: 11px;
+    font-family: $font-medium;
+  }
+}

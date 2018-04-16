@@ -1,0 +1,99 @@
+@import '../../../../assets/styles/variables.scss';
+
+.venue-detail-cover {
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 600px;
+  display: flex;
+  flex-flow: row wrap;
+  align-content: flex-end;
+  position: relative;
+
+  .curtain {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background: rgba(18, 24, 95, 0.6);
+    z-index: 1;
+  }
+
+  h2 {
+    font-size: 64px;
+    font-weight: 300;
+    color: #ffffff;
+    font-family: $font-thin;
+    width: 100%;
+    margin: 0 0 24px;
+    position: relative;
+    z-index: 2;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .logo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    text-align: center;
+    z-index: 2;
+  }
+
+  .container {
+    position: relative;
+    width: 100%;
+  }
+
+  .venue-info {
+    padding: 24px 0;
+    background-image: linear-gradient(95deg, rgba(30, 13, 180, 0.8), rgba(228, 71, 71, 0.8));
+    width: 100%;
+    align-self: flex-end;
+    position: relative;
+    z-index: 2;
+
+    .address,
+    .phone {
+      display: block;
+      margin-bottom: 12px;
+    }
+
+    .rating-price-wrap {
+      line-height: 12px;
+    }
+
+    .point {
+      width: 0;
+      height: 0;
+      border: 35px solid transparent;
+      border-bottom-color: #776cee;
+      position: relative;
+      top: -35px;
+      color: white;
+      line-height: 70px;
+      position: absolute;
+      right: 0;
+      top: -94px;
+
+      &:after {
+        content: '';
+        position: absolute;
+        left: -35px;
+        top: 35px;
+        width: 0;
+        height: 0;
+        border: 35px solid transparent;
+        border-top-color: #776cee;
+      }
+
+      span {
+        position: relative;
+        z-index: 2;
+        margin-left: -11px;
+      }
+    }
+  }
+}
