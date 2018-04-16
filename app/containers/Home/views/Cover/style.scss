@@ -35,11 +35,18 @@
   color: #fff;
   opacity: 1;
   transition: opacity .6s ease-in-out;
+  @media(max-width: 768px) {
+    padding: 0 10px;
+    text-align: center;
+  }
 
   h1 {
     margin: 24px 0 16px;
     font-size: 56px;
     font-family: $font-thin;
+    @media(max-width: 468px) {
+      font-size: 32px;
+    }
   }
 
   p {
@@ -56,10 +63,27 @@
   justify-content: space-between;
   width: 100%;
   transition: all .3s ease-in-out;
+  @media(max-width: 468px) {
+    margin-top: 35px;
+    display: block;
+    max-width: 400px;
+  }
 
   button {
+    @media(max-width: 468px) {
+      width: 50%;
+    }
     img {
       width: 56px;
+    }
+  }
+
+  .input-wrapper {
+    @media(max-width: 468px) {
+      margin-bottom: 10px;
+      input {
+        width: 100%;
+      }
     }
   }
 
@@ -90,6 +114,11 @@
     flex-direction: row;
     max-width: 920px;
     align-items: flex-start;
+    @media(max-width: 768px) {
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+    }
   }
 
   .logo {
