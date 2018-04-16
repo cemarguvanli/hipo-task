@@ -9,15 +9,33 @@ import NotFoundPage from 'containers/NotFoundPage';
 
 import './style.scss';
 
-const App = () => (
-  <div className="app-wrapper">
-    <Switch>
-      <Route exact path="/" component={Home} />
-      <Route exact path="/venue/:id" component={VenueDetail} />
-      <Route path="" component={NotFoundPage} />
-    </Switch>
-    <Footer />
-  </div>
-);
+export default class App extends React.PureComponent {
+  constructor(props) {
+    super(props);
 
-export default App;
+    this.state = {
+      error: '',
+      errorInfo: '',
+    };
+  }
+
+  componentDidCatch(error, errorInfo) {
+    this.setState({ error, errorInfo });
+    // Raven.captureException(error, { extra: errorInfo });
+  }
+
+  render() {
+    const { error, errorInfo } = this.state;
+    console.log(error, errorInfo, 'global error'); // eslint-disable-line
+    return (
+      <div className="app-wrapper">
+        <Switch>
+          <Route exact path="/" component={Home} />
+          <Route exact path="/venue/:id" component={VenueDetail} />
+          <Route path="" component={NotFoundPage} />
+        </Switch>
+        <Footer />
+      </div>
+    );
+  }
+}
