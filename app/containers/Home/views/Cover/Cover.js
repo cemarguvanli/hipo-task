@@ -11,7 +11,7 @@ import SEARCH_ICON from 'assets/images/icons/search.svg';
 import './style.scss';
 
 const Cover = ({
-  onChange, onSubmit, near, query, isSubmitted
+  onChange, onSubmit, near, query, isSubmitted, isFormValid
 }) => (
   <div className={`search-form-wrapper ${isSubmitted ? 'submitted' : ''}`}>
     <div className="inner-wrapper">
@@ -43,6 +43,11 @@ const Cover = ({
         <Button type="danger">
           <img src={SEARCH_ICON} alt="Search" />
         </Button>
+        { !isFormValid && (
+          <div className="error-message">
+            Please make sure all fields are filled out properly
+          </div>
+        )}
       </form>
     </div>
   </div>
@@ -54,6 +59,7 @@ Cover.propTypes = {
   onChange: PropTypes.func,
   onSubmit: PropTypes.func,
   isSubmitted: PropTypes.bool,
+  isFormValid: PropTypes.bool,
 };
 
 export default Cover;

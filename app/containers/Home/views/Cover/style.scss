@@ -63,6 +63,7 @@
   justify-content: space-between;
   width: 100%;
   transition: all .3s ease-in-out;
+  position: relative;
   @media(max-width: 468px) {
     margin-top: 35px;
     display: block;
@@ -138,4 +139,15 @@
   .search-form {
     margin: 52px 0;
   }
+}
+.error-message {
+  position: absolute;
+  bottom: -22px;
+  left: 12px;
+  color: #fff;
+  font-size: 12px;
+  background: #c72e2e;
+  border-radius: 3px;
+  padding: 4px 5px;
+  bottom: -30px;
 }

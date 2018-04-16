@@ -20,8 +20,9 @@ export default class Home extends React.PureComponent {
     this.handleInputOnChange = this.handleInputOnChange.bind(this);
 
     this.state = {
-      query: 'cafe',
-      near: 'istanbul'
+      query: 'bar',
+      near: 'istanbul',
+      isFormValid: true
     };
   }
 
@@ -32,8 +33,11 @@ export default class Home extends React.PureComponent {
   onSubmit(e) {
     e.preventDefault();
     const { near, query } = this.state;
-
-    this.props.fetchVenuesExplore({
+    if (!near || !query) {
+      return this.setState({ isFormValid: false });
+    }
+    this.setState({ isFormValid: true });
+    return this.props.fetchVenuesExplore({
       params: {
         near,
         query,
@@ -53,7 +57,7 @@ export default class Home extends React.PureComponent {
   }
 
   render() {
-    const { near, query } = this.state;
+    const { near, query, isFormValid } = this.state;
     const {
       venues, warning, loading, isSubmitted, recentSearches, fetchVenuesExplore
     } = this.props;
@@ -66,6 +70,7 @@ export default class Home extends React.PureComponent {
         <Cover
           near={near}
           query={query}
+          isFormValid={isFormValid}
           onSubmit={this.onSubmit}
           isSubmitted={isSubmitted}
           onChange={this.handleInputOnChange}
