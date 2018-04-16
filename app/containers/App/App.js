@@ -9,7 +9,7 @@ import NotFoundPage from 'containers/NotFoundPage';
 
 import './style.scss';
 
-export default class App extends React.PureComponent {
+export default class App extends React.Component {
   constructor(props) {
     super(props);
 
