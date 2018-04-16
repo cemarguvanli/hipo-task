@@ -2,7 +2,12 @@
 
 .venue-detail-page {
   .sidebar.tips {
-    box-shadow: 0 0 34px 0 rgba(115, 95, 255, 0.32);
+    margin-top: -56px;
+    position: relative;
+    z-index: 2;
+    @media(max-width: 768px) {
+      margin-top: 20px;
+    }
     .link {
       margin: 40px 0;
     }
